@@ -24,7 +24,7 @@
     <!--Title-->
 
 
-<title>Hello World | 权飞虎</title>
+<title>&#39;MongoDB入门&#39; | 权飞虎</title>
 
 
     <link rel="alternate" href="/atom.xml" title="权飞虎" type="application/atom+xml">
@@ -122,9 +122,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="Hello World">
+        <h1 id="&#39;MongoDB入门&#39;">
             
-            Hello World
+            &#39;MongoDB入门&#39;
             
         </h1>
         <div class="post-meta">
@@ -140,7 +140,7 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            null
+            非关系型数据库
             
         </span>
     </span>
@@ -157,15 +157,88 @@
     </div>
     
     <div class="post-body">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>#MongoDB入门<br>NoSQL(Not Only SQL )，意即<strong>不仅仅是SQL</strong> ,指的是非关系型的数据库 。是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。<br>关系型数据库中的表都是存储一些结构化的数据，每条记录的字段的组成都一样，即使不是每条记录都需要所有的字段，但数据库会为每条数据分配所有的字段。而非关系型数据库以键值对<strong>(key-value)</strong>存储，它的结构不固定，每一条记录可以有不一样的键，每条记录可以根据需要增加一些自己的键值对，这样就不会局限于固定的结构，可以减少一些时间和空间的开销。</p>
+<p>###NoSql数据库优缺点</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li><strong>简单的扩展</strong></li>
+<li><strong>快速的读写</strong></li>
+<li><strong>低廉的成本</strong></li>
+<li><strong>灵活的数据模型</strong></li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li><strong>不提供对SQL的支持</strong></li>
+<li><strong>支持的特性不够丰富（特别是事务）</strong></li>
+<li><strong>现有的产品不够成熟</strong><br>###MongoDB简介<br>MongoDB是用C++语言编写的非关系型数据库。特点是高性能、易部署、易使用，存储数据十分方便，主要特性有：<br>面向集合存储，易于存储对象类型的数据<br>模式自由<br>支持动态查询<br>支持完全索引，包含内部对象<br>支持复制和故障恢复<br>使用高效的二进制数据存储，包括大型对象<br>文件存储格式为BSON(一种JSON的扩展)<br>###MongoDB常用命令及说明<ul>
+<li>use mydb 切换数据库</li>
+<li>db.dropDatabase() 删除当前数据库</li>
+<li>show dbs 查看所有数据库</li>
+<li>db 查看当前正在使用的数据库</li>
+<li>show collections 或 show tables 查看当前收据库所有的集合<br>####创建集合</li>
+<li><strong>db.createCollection(“集合名称”)</strong>    显式创建</li>
+<li><strong>db.集合名称.insert({})</strong> 创建集合并插入数据（隐式创建）<br>####添加</li>
+<li><strong>db.user.insert({name:”张三”，age:18})</strong><br>####查找</li>
+<li><strong>db.user.find({name:”张三”，age:18})</strong> 查找user集合中name为张三，age为18的元素</li>
+<li><strong>db.user.finOne()</strong> 查找user第一个元素</li>
+<li><strong>db.user.find({name:”张三”}，{age:1})</strong> 查询user集合中name为张三的，结果只显示age字段</li>
+<li><strong>分页</strong></li>
+</ul>
+</li>
+<li><strong>db.customer.count();</strong></li>
+<li><strong>db.customer.find().count();</strong></li>
+<li><strong>db.customer.find({age:{$lt:5}}).count();</strong></li>
+<li><strong>db.customer.find().sort({age:1}); 降序-1</strong></li>
+<li><strong>db.customer.find().skip(2).limit(3);</strong></li>
+<li><strong>db.customer.find().sort({age:-1}).skip(2).limit(3);</strong></li>
+<li><strong>db.customer.find().sort({age:-1}).skip(2).limit(3).count();</strong></li>
+<li><strong>db.customer.find().sort({age:-1}).skip(2).limit(3).count(0);</strong></li>
+<li><strong>db.customer.find().sort({age:-1}).skip(2).limit(3).count(1);</strong><ul>
+<li><strong>db.user.find({hobby:{$all:[“足球”,”篮球”})</strong>查找user集合中爱好包含足球和篮球的元素</li>
+<li><strong>db.user.find({id:{$in:{“1”,”2”})</strong>类似mysql中的in</li>
+<li><strong>db.user.find({id:{$nin:{“1”,”2”})</strong></li>
+<li><strong>db.user.find({$or:[{name:”zhangsan”},{age:18}]})</strong>name等于张三或者age等于18</li>
+<li><strong>db.user.find({$nor:[{name:”zhangsan”},{age:18}]})</strong></li>
+<li><strong>db.customer.find({name:{$exists:1}})</strong> 集合中（存在/不存在）某个字段1存在；0不在</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>//大于</strong>： field &gt; value<br><strong>db.collection.find({field:{$gt:value}});</strong></p>
+</li>
+<li><p>//小于： field &lt; value<br><strong>db.collection.find({field:{$lt:value}});</strong></p>
+</li>
+<li><p>//大于等于： field &gt;= value<br><strong>db.collection.find({field:{$gte:value}});</strong></p>
+</li>
+<li><p>//小于等于： field &lt;= value<br><strong>db.collection.find({field:{$lte:value}});</strong></p>
+</li>
+<li><p>//不等于：  field != value<br><strong>db.collection.find({field:{$ne:value}});</strong></p>
+</li>
+</ul>
+<p>####删除</p>
+<ul>
+<li><strong>db.user.remove()</strong> 删除user集合中的所有的元素</li>
+<li><strong>db.user.remove({name:”张三”，age:18})</strong> 删除user集合中name为张三，并且age是18的元素<br>####更新</li>
+<li><strong>db.collection.update(criteria,objNew,upsert,multi)</strong><br><em>参数说明：</em><ul>
+<li><strong>criteria:</strong>用于设置查询条件的对象</li>
+<li><strong>objNew:</strong>用于设置更新内容的对象</li>
+<li><strong>upsert:</strong>如果记录已经存在，更新它，否则新增一个记录，取值为0或1</li>
+<li><strong>multi：</strong>如果有多个符合条件的记录，是否全部更新，取值为0或1</li>
+<li>例如：db.c1.update({name:”user1”},{$set:{address:”bj”}},0,1)</li>
+</ul>
+</li>
+<li><strong>db.user.update({name:”zhangsan”},{$inc:{age:1}})</strong>将集合中name为zhangsan的年龄+1</li>
+<li><strong>db.user.update({name:”zhangsan”},{$unset:{age:1}},0,1)</strong>删除name为zhangsan的元素的键age<br>####索引<ul>
+<li><strong>db.collectionName.ensureIndex({key:1},{unique:true})</strong> 为某个key创建唯一索引</li>
+<li><strong>db.collectionName.dropIndex({id:1})</strong>删除索引<br>####固定集合</li>
+<li><strong>db.createCollection(“collectionName”,{capped:true,size:100000,max:100})</strong>size指定集合大小，单位为KB，max指定文档的数量<br>####备份</li>
+<li><strong>mongodump -h dbhost -d dbname -o dbdirectory</strong><br>将数据库dbname备份到dbdirectory目录下<br>####恢复</li>
+<li><strong>mongorestore -h dbhost -d dbname -directoryperdb dbdirectory</strong><br>将dbdirectory目录下的数据恢复到dbname数据库下<br>####导出</li>
+<li><strong>mongoexport -h dbhost -d dbname -c collectionName -o file</strong><br>将数据库dbname中collectionName 导出到file中<br>####导入</li>
+<li><strong>mongoimport -h dbhost -d dbname -c collectionname file</strong><br>将file中的数据导入到数据库dbname中的collectionName</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -271,6 +344,13 @@
 
         
         
+  <div class="widget">
+    <h3 class="title">Tag Cloud</h3>
+    <div class="content tag-cloud">
+        <a href="/tags/非关系型数据库/" style="font-size: 10px;">非关系型数据库</a>
+    </div>
+  </div>
+
 
         
         
